@@ -11,7 +11,7 @@ const HomePage = () => {
                 infiniteLoop
                 useKeyboardArrows
                 autoPlay
-                interval={5000}>
+                interval={3000}>
                 <div className="image-container">
                     <div className="image-overlay"></div>
                     <img src="../images/gp.png" alt="Main" />
