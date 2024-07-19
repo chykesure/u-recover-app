@@ -19,7 +19,7 @@ const Testimony = () => {
 
   return (
     <div className="testimonies">
-      <h2>Testimonies</h2>
+      <h2 className="testimonies-title">Testimonies</h2>
       {testimonies.map((testimony, index) => (
         <div key={testimony.id} className={`testimony ${index % 2 === 0 ? 'even' : 'odd'}`}>
           <img src={testimony.image} alt={testimony.name} className="testimony-image" />

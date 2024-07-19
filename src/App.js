@@ -9,6 +9,7 @@ import LatestBlog from './views/Latestblog';
 import Meetup from './views/Meetup';
 import Testimony from './views/Testimony';
 import Resources from './views/Resources';
+import Footer from './views/Footer';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Meetup />
       <Testimony />
       <Resources />
+      <Footer />
     </div>
   );
 };
