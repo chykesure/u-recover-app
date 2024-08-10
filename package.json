@@ -6,7 +6,10 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+<<<<<<< HEAD
     "@reach/router": "^1.3.4",
+=======
+>>>>>>> 3609f9201f9da47202ae07832bfd3e716e8c1c05
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -14,8 +17,12 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-responsive-carousel": "^3.2.23",
+<<<<<<< HEAD
     "react-router-dom": "^6.26.0",
     "react-scripts": "^5.0.1",
+=======
+    "react-scripts": "5.0.1",
+>>>>>>> 3609f9201f9da47202ae07832bfd3e716e8c1c05
     "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
