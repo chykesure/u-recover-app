@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { FaHeartbeat, FaSoap, FaPrayingHands, FaHeart, FaCross, FaHandsHelping } from 'react-icons/fa';
 import { GiHolyGrail } from 'react-icons/gi';
 
@@ -17,7 +17,7 @@ const articles = [
   { title: 'Article Title 12', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: <FaHeartbeat className="text-3xl text-red-400 font-bold" /> },
 ];
 
-const Carouse2 = () => {
+const Carousel= () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = articles.length;
 
@@ -80,4 +80,4 @@ const Carouse2 = () => {
   );
 };
 
-export default Carouse2;
+export default Carousel;
