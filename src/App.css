@@ -1,3 +1,24 @@
 body{
   min-height:100vh;
 }
+.abouthero {
+  background-image: url('src/assets/pexels-fauxels-3184292.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+}
+.counsellorhero{
+  background-image: url('/src/assets/pexels-pixabay-416405.png'); 
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+  .float-left {
+    float: left;
+    margin-right: 1rem; /* Adjust as needed */
+    margin-bottom: 1rem; /* Adjust as needed */
+  }

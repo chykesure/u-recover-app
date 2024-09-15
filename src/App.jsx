@@ -1,5 +1,5 @@
+import MainCounsellorPage from './components/Counsellor/MainCounsellorPage'
 
-import MainArticleWriteup from './components/ArticlesWriteup/MainArticleWriteup'
 
 import './App.css'
 
@@ -13,8 +13,8 @@ function App() {
       <div className="antiinitialised text-2xl">
 
         
-    
-        <MainArticleWriteup />
+        <MainCounsellorPage />
+        
 
       
         
