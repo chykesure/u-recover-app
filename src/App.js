@@ -9,6 +9,7 @@ import Dashboard from './views/Dashboard'; // Example import
 import ArticleList from './views/Articles';
 import Blogs from './views/BLogs';
 import ArticlesWriteup from './views/ArticlesWriteup';
+import BlogsWriteup from './views/BlogsWriteup';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/articles" element={<ArticleList />} />
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/articles-writeup" element={<ArticlesWriteup />} />
+      <Route path="/blogs-writeup" element={<BlogsWriteup />} />
       {/* Add more routes as needed */}
     </Routes>
 

@@ -145,18 +145,26 @@ const LandingPage = () => {
     };
     const handleClickBlogs = () => {
         navigate('/blogs');
-      };
+    };
+    const handleClickArticlesWriteup = () => {
+        navigate('/articles-writeup');
+    };
+    const handleClickBlogssWriteup = () => {
+        navigate('/blogs-writeup');
+    };
 
     return (
         /* NAV BAR */
 
         <div className="Landing">
 
-            <nav className="navbar">
+            {/* HEADER BAR */}
+            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
                 <div className="navbar-logo">
                     <img src="../images/ucover.png" alt="Logo" />
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                    <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -170,7 +178,7 @@ const LandingPage = () => {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup">
+                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
                     </Link>
@@ -178,7 +186,7 @@ const LandingPage = () => {
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup">
+                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
                     </Link>

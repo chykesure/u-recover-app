@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
-import png1 from '../assets/pexels-linkedin-1251832.png';
-import png2 from '../assets/pexels-vlada-karpovich-4050347.png';
-import png3 from '../assets/Deeper-life-logo-final-outlines-.png';
-import billyGrahamImage from '../../src/imgs/rBGEA.png';
-import uRecoverImage from '../../src/imgs/ucover.png';
-import { FiChevronDown } from 'react-icons/fi';
 import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faBook, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import png1 from '../assets/pexels-vlada-karpovich-4050347.png';
+import png2 from '../assets/Deeper-life-logo-final-outlines-.png'
+import { FiChevronDown } from 'react-icons/fi';
 import '../components/Footer.css';
 import { FaTwitter, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
-function ArticlesWriteup() {
 
 
+const articles = [
+    { title: 'My Depression Experience in 2020', author: 'Author 1', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 2', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 3', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 4', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 5', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 6', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 7', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 8', image: png1 },
+    { title: 'My Depression Experience in 2020', author: 'Author 9', image: png1 },
+
+];
+
+
+function BlogsWriteup(props) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -37,24 +47,8 @@ function ArticlesWriteup() {
     const handleClickBlogssWriteup = () => {
         navigate('/blogs-writeup');
     };
-
-    const articles = [
-        { title: 'Article Title 1', author: 'Author 1', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 2', author: 'Author 2', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 3', author: 'Author 3', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 4', author: 'Author 4', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 5', author: 'Author 5', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 6', author: 'Author 6', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 7', author: 'Author 7', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 8', author: 'Author 8', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-        { title: 'Article Title 9', author: 'Author 9', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
-
-    ];
-
     return (
         <div style={{ height: `125vh`, overflowX: '' }}>
-
-
             {/* HEADER BAR */}
             <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
                 <div className="navbar-logo">
@@ -106,30 +100,74 @@ function ArticlesWriteup() {
                 </div>
             </nav>
 
-            {/* MAIN-PAGE */}
-            <div className="container mx-auto flex flex-col p-4 mt-4">
-                <div className="w-full">
-                    <h2> Holiness </h2>
-                    <h1 className='text-3xl font-bold mt-2'>Embracing a Lifestyle of holiness in a persevere world</h1>
+            {/* BLOGS TREND */}
+            <div className="container mx-auto p-4 mt-4 flex flex-col md:flex-row space-x-4 ">
+
+                <div className="w-full md:w-1/2 mr-2 flex flex-col">
+
+                    <div className=''>
+                        <img src={png1} alt='img' className="w-full " />
+                        <strong className="text-sm font-sm"> Holiness </strong>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold"> Living a Life of Holiness </h2>
+                        <p className="text-sm"> Lorem Ipsum dolor sit amet Consecteur . faucibis id oursus
+                            The Popliteal fossa is a transmitting neurovascular structure posterior to the knee
+                            The Boundaries of the Popliteal fossa.
+                            The superior lateral boder is the Biceps femoris
+                            The superior medial border is are the semitendinosus and semimebranosus
+                            The inferior lateral boarder is the lateral head of the gastrocnemius
+                            The inferior medial border is the medial head of the gastrocnemius
+                            The floor of the Popliteal fossa includes the Popliteus muscle
+                            The roof of the popliteal fossa include the superficial and deep popliteal fasica, and the skin
+                            The contents of the popliteal fossa include the saphenous vein, the popliteal arteries and vein...
+                            <a href="/" className="text-green-600 hover:text-green-500 text-sm"> See More</a>
+                        </p>
+
+                    </div>
+
                 </div>
-                <div className="w-full mt-2">
-                    <img src={png1} alt="img" />
-                </div>
-                <div className="w-full mt-2">
-                    <p className='text-xl'>
-                        The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
-                    </p>
+
+                <div className="w-full md:w-1/2 ml-2 flex flex-col ">
+
+                    <div className="mb-4">
+                        <h2 className="font-bold text-green-800"> Trending Blogs </h2>
+                    </div>
+
+                    <div className="flex flex-row justify-center items-center p-4 space-x-2 rounded-md shadow-md">
+
+                        <div className="w-1/2 "> <img src={png1} alt='img' /></div>
+                        <div className="w-1/2 flex flex-col">
+                            <h3 className="text-sm text-lg"> Health </h3>
+                            <h2 className="font-semibold text-xl"> Living a Life of Holiness </h2>
+                            <h3 className="text-sm"> By Hannah Linus </h3>
+                        </div>
+
+                    </div>
+                    <div className="flex flex-row justify-center items-center p-4 space-x-2 rounded-md shadow-md">
+
+                        <div className="w-1/2 "> <img src={png1} alt='img' /></div>
+                        <div className="w-1/2 flex flex-col">
+                            <h3 className="text-sm text-lg"> Health </h3>
+                            <h2 className="font-semibold text-xl"> Living a Life of Holiness </h2>
+                            <h3 className="text-sm"> By Hannah Linus </h3>
+                        </div>
+
+                    </div>
+                    <div className="flex flex-row justify-center items-center p-4 space-x-2 rounded-md shadow-md">
+
+                        <div className="w-1/2 "> <img src={png1} alt='img' /></div>
+                        <div className="w-1/2 flex flex-col">
+                            <h3 className="text-sm text-lg"> Health </h3>
+                            <h2 className="font-semibold text-xl"> Living a Life of Holiness </h2>
+                            <h3 className="text-sm"> By Hannah Linus </h3>
+                        </div>
+                    </div>
                 </div>
             </div>
 
 
+            {/* COUNSELLOR PAGE */}
             <div className='container mx-auto flex flex-col md:flex-row p-4 mt-4'>
                 <div className='w-full md:w-1/2 flex flex-col text-lg font-semibold p-4'>
 
@@ -138,30 +176,32 @@ function ArticlesWriteup() {
                         Lorem Ipsum dolor sit amet Arcu lacus habitaste
                         pellentesque mi. Sclerisquw alit volutpat elit psuere
                         justo non tincidunt tincidunt. In ay proin sed consectetur convallis sit imperdiet
+
+
                     </p>
                     <button className="text-left rounded-md text-white px-4 py-2 bg-green-700 w-[150px] hover:bg-green-600"> Book Session </button>
 
                 </div>
 
                 <div className="w-full md:w-1/2 rounded-md flex items-center justify-center ">
-                    <img src={png2} alt='img' className="max-w-full" />
+                    <img src={png1} alt='img' className="max-w-full" />
 
                 </div>
-
             </div>
 
 
-            {/* RELATED ARTICLES */}
+            {/* BLOG LIST */}
             <>
+
                 <section className="container mx-auto p-4">
-                    <h2 className="text-2xl font-bold mb-4">Related Articles</h2>
+                    <h2 className="text-2xl font-bold mb-4"> {props.title || 'Popular Blogs'} </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {articles.map((article, index) => (
                             <div key={index} className="bg-white p-4 shadow-md rounded-lg">
                                 <img src={article.image} alt={article.title} className="w-full h-40 object-cover rounded-md mb-4" />
                                 <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
-                                <p className="text-3xl font-bold text-blue-600 text-sm" style={{ color: 'black' }}> {article.msg}</p>
-                                <p className="text-5xl font-bold text-blue-600 text-sm" style={{ color: 'black' }}>Written by : {article.author}</p>
+
+                                <p className="text-gray-700 text-sm">By {article.author}</p>
                             </div>
                         ))}
                     </div>
@@ -170,39 +210,43 @@ function ArticlesWriteup() {
                     <div className="flex items-center rounded-full justify-center mt-8 ">
                         <hr className="flex-grow border-t border-gray-300 mr-4 " />
                         <a href="/articles" className="flex items-center px-4 py-2 bg-green-600 text-white font-semibold rounded-md text-sm hover:bg-green-700 transition duration-300">
-                            View All Articles <FiChevronDown className="ml-2" />
+                            See More <FiChevronDown className="ml-2" />
                         </a>
                         <hr className="flex-grow border-t border-gray-300 ml-4" />
                     </div>
                 </section>
-
             </>
 
             {/* RESOURCES */}
             <div className='bg-gray-100 flex flex-col justify-center items-center mt-4'>
                 <div>
                     <h1> Resources </h1>
+
                 </div>
                 <div className='container mx-auto p-4 flex flex-col md:flex-row w-full  '>
+
                     <div className="w-full md:w-1/4 p-2 m-2">
-                        <div className='h-64 bg-green-600  m-2 flex items-center justify-center rounded-md shadow-md'> <img src={png3} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
-                        <div className="flex items-center justify-center"> <h3 className="text-sm text-center font-bold" style={{ color: 'black' }}> Deeper Christian Life Ministry </h3></div>
+                        <div className='h-64 bg-green-600  m-2 flex items-center justify-center rounded-md shadow-md'> <img src={png2} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
+                        <div className="flex items-center justify-center"> <h4 style={{ color: 'black' }} className="text-sm text-center font-bold"> Deeper Christian Life Ministry </h4></div>
+
                     </div>
                     <div className="w-full md:w-1/4 p-2 m-2">
-                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={billyGrahamImage} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
-                        <div className="flex items-center justify-center"> <h3 className="text-sm text-center font-bold" style={{ color: 'black' }}> Billy Graham Evangelical Association</h3></div>
+                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={png2} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
+                        <div className="flex items-center justify-center"> <h4 style={{ color: 'black' }} className="text-sm text-center font-bold"> Billy Graham Evangelical Association</h4></div>
+
                     </div>
                     <div className="w-full md:w-1/4 p-2 m-2">
-                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={uRecoverImage} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" style={{ borderRadius: 80 }} /></div>
-                        <div className="flex items-center justify-center"> <h3 className="text-sm text-center font-bold" style={{ color: 'black' }}> U-Recover </h3></div>
+                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={png2} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
+                        <div className="flex items-center justify-center"> <h4 style={{ color: 'black' }} className="text-sm text-center font-bold"> U-Recover </h4></div>
+
                     </div>
                     <div className="w-full md:w-1/4 p-2 m-2">
-                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={uRecoverImage} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" style={{ borderRadius: 80 }} /></div>
-                        <div className="flex items-center justify-center"> <h3 className="text-sm text-center font-bold" style={{ color: 'black' }}> U - Recover </h3></div>
+                        <div className='h-64 bg-green-600 m-2 flex items-center justify-center rounded-md shadow-md'> <img src={png2} alt='PIC' className="w-[100px] h-[100px] px-4 py-2 rounded-md shadow-md" /></div>
+                        <div className="flex items-center justify-center"> <h4 style={{ color: 'black' }} className="text-sm text-center font-bold"> U - Recover </h4></div>
+
                     </div>
                 </div>
             </div>
-
 
             {/* FOOTER */}
             <footer className="footer mt-5 mb-4">
@@ -241,9 +285,8 @@ function ArticlesWriteup() {
                     &copy; U-Recover 2024
                 </div>
             </footer>
-
         </div>
     )
 }
 
-export default ArticlesWriteup
+export default BlogsWriteup
