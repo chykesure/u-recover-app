@@ -1,7 +1,7 @@
 import png1 from '../assets/Thubnail.png';
 import png2 from '../assets/pexels-vlada-karpovich-4050347.png'
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faBook, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaHeartbeat, FaSoap, FaPrayingHands, FaHeart, FaCross, FaHandsHelping } from 'react-icons/fa';
@@ -105,10 +105,7 @@ const Blogs = () => {
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
                     </Link>
-                    <Link to="/resources">
-                        <FontAwesomeIcon icon={faBook} className="icon" />
-                        Resources
-                    </Link>
+                    
                     <Link to="/counsellors-profile">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
                         Counsellors Profile
@@ -125,7 +122,7 @@ const Blogs = () => {
             </nav>
 
             {/* CARD SECTION */}
-            <section className="relative bg-cover bg-center opacity-90 pt-20"
+            <section className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
                 style={{ backgroundImage: `url(${png2})`, height: `40vh`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-900 opacity-80"></div>
                 <div className="relative z-10 flex flex-col justify-center items-center text-white h-full">

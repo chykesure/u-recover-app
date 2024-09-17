@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../components/Navbar.css';
 import '../components/Landing.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faBook, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../components/Homepage.css';
@@ -190,10 +190,7 @@ const LandingPage = () => {
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
                     </Link>
-                    <Link to="/resources">
-                        <FontAwesomeIcon icon={faBook} className="icon" />
-                        Resources
-                    </Link>
+                    
                     <Link to="/counsellors-profile">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
                         Counsellors Profile

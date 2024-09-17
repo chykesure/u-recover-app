@@ -1,7 +1,7 @@
 import png1 from '../assets/pexels-linkedin-1251832.png'
 import React, { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faBook, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -110,10 +110,7 @@ const ArticleList = () => {
             <FontAwesomeIcon icon={faPenFancy} className="icon" />
             Blogs Write-Up
           </Link>
-          <Link to="/resources">
-            <FontAwesomeIcon icon={faBook} className="icon" />
-            Resources
-          </Link>
+          
           <Link to="/counsellors-profile">
             <FontAwesomeIcon icon={faUserFriends} className="icon" />
             Counsellors Profile
@@ -130,7 +127,7 @@ const ArticleList = () => {
       </nav>
 
       {/* Section with a background image */}
-      <section className="relative bg-cover bg-center opacity-90 pt-20"
+      <section className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
         style={{ backgroundImage: `url(${png1})`, height: `60vh`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-900 opacity-75"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-white h-full">

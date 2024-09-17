@@ -10,6 +10,8 @@ import ArticleList from './views/Articles';
 import Blogs from './views/BLogs';
 import ArticlesWriteup from './views/ArticlesWriteup';
 import BlogsWriteup from './views/BlogsWriteup';
+import CounsellorProfile from './views/CounsellorProfile';
+import AboutUs from './views/AboutUs';
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/articles-writeup" element={<ArticlesWriteup />} />
       <Route path="/blogs-writeup" element={<BlogsWriteup />} />
+      <Route path="/counsellors-profile" element={<CounsellorProfile />} />
+      <Route path="/aboutus" element={<AboutUs />} />
       {/* Add more routes as needed */}
     </Routes>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faBook, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import png1 from '../assets/pexels-vlada-karpovich-4050347.png';
@@ -81,10 +81,7 @@ function BlogsWriteup(props) {
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
                     </Link>
-                    <Link to="/resources">
-                        <FontAwesomeIcon icon={faBook} className="icon" />
-                        Resources
-                    </Link>
+                    
                     <Link to="/counsellors-profile">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
                         Counsellors Profile
