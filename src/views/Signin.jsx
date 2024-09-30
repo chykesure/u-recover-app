@@ -23,12 +23,21 @@ function Signin() {
   return (
     <div className="signin-container">
       <div className="signin-card">
-        <div className="signin-logo">
-          <img src="../images/ucover.png" alt="Logo" />
+        {/* Logo */}
+        <div className="p-8 rounded-lg max-w-md w-full flex justify-center items-center">
+          <img src="../images/ucover.png" alt="Logo" className="logo-image w-28 h-28 rounded-full" />
         </div>
-        <h2>Sign up to get started</h2>
-        <p>New here? You have come to the right place</p>
+
+
+        {/* Title and Subtext */}
+        <h2 className="signin-title">Sign up to get started</h2>
+        <p className="signin-subtext">
+          New here? You have come to the right place
+        </p>
+
+        {/* Form */}
         <form onSubmit={handleSubmit}>
+          {/* Full Name */}
           <div className="input-group">
             <input
               type="text"
@@ -36,8 +45,11 @@ function Signin() {
               placeholder="Enter your full name"
               required
               aria-label="Full name"
+              className="signin-input"
             />
           </div>
+
+          {/* Email */}
           <div className="input-group">
             <input
               type="email"
@@ -45,8 +57,11 @@ function Signin() {
               placeholder="Enter your email"
               required
               aria-label="Email address"
+              className="signin-input"
             />
           </div>
+
+          {/* Password */}
           <div className="input-group">
             <div className="password-container">
               <input
@@ -55,18 +70,18 @@ function Signin() {
                 placeholder="Enter your password"
                 required
                 aria-label="Password"
+                className="signin-input"
               />
               <span
                 className="show-password"
                 onClick={() => handlePasswordToggle('password1')}
-                aria-label={
-                  showPassword.password1 ? 'Hide password' : 'Show password'
-                }
               >
                 {showPassword.password1 ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
           </div>
+
+          {/* Confirm Password */}
           <div className="input-group">
             <div className="password-container">
               <input
@@ -75,29 +90,39 @@ function Signin() {
                 placeholder="Confirm password"
                 required
                 aria-label="Confirm password"
+                className="signin-input"
               />
               <span
                 className="show-password"
                 onClick={() => handlePasswordToggle('password2')}
-                aria-label={
-                  showPassword.password2 ? 'Hide password' : 'Show password'
-                }
               >
                 {showPassword.password2 ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
           </div>
-          <button type="submit" className="signin-button">Sign Up</button>
+
+          {/* Sign Up Button */}
+          <button type="submit" className="signin-button">
+            Sign Up
+          </button>
+
+          {/* Separator */}
           <div className="separator">
-            <span>OR</span>
+            <span className="separator-line"></span>
+            <span className="separator-text">OR</span>
+            <span className="separator-line"></span>
           </div>
+
+          {/* Google Sign Up */}
           <button type="button" className="google-signin">
             <FaGoogle style={{ marginRight: '8px' }} />
             Sign up with Google
           </button>
         </form>
+
+        {/* Sign In Link */}
         <p className="login-link">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <a href="/login">Sign In</a>
         </p>
       </div>
     </div>
@@ -105,5 +130,3 @@ function Signin() {
 }
 
 export default Signin;
-
-
