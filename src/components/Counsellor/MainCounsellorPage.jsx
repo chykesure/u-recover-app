@@ -9,10 +9,7 @@ function MainCounsellorPage() {
     <div className="antiinitialised">
         <Header />
         <CounsellorHero />
-        <Counsellor
-        
-            
-        />
+        <Counsellor   />
         <Footer />
     </div>
   )

@@ -1,5 +1,5 @@
-import MainCounsellorPage from './components/Counsellor/MainCounsellorPage'
 
+import MainTestimonyDetail from './components/TestimonyDetail/MainTestimonyDetail'
 
 import './App.css'
 
@@ -11,14 +11,9 @@ function App() {
     <>
    
       <div className="antiinitialised text-2xl">
+     
+      <MainTestimonyDetail />
 
-        
-        <MainCounsellorPage />
-        
-
-      
-        
-          
        
       </div>
     </>
