@@ -17,28 +17,31 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="p-8 rounded-lg max-w-md w-full">
+    <div className="h-screen flex justify-center items-center bg-white p-6 sm:p-8">
+      <div className="w-full max-w-md mx-auto p-6 sm:p-8 bg-white rounded-lg shadow-lg">
         {/* Logo Section */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4">
           <img
             src="../images/ucover.png"
             alt="Logo"
-            className="w-28 h-28 rounded-full"
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full"
           />
         </div>
 
         {/* Title */}
-        <h2 className="text-2xl font-bold text-center mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">
           Login to your account
         </h2>
-        <p className="text-center text-gray-600 mb-6">
+        <p className="text-center text-gray-600 mb-4 sm:mb-4">
           Welcome back! Provide your email and password
         </p>
 
         {/* Login Form */}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full lg:w-4/5 mx-auto" // Adjusted width for form container
+        >
+          <div className="mb-3 sm:mb-4">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
@@ -48,14 +51,15 @@ function Login() {
             <input
               type="email"
               id="email"
+              name="email"
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               aria-label="Email address"
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-3 sm:mb-4">
             <label
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
@@ -66,9 +70,10 @@ function Login() {
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
+                name="password"
                 placeholder="Enter your password"
                 required
-                className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 aria-label="Password"
               />
               <span
@@ -90,7 +95,7 @@ function Login() {
           </button>
 
           {/* Separator */}
-          <div className="flex items-center justify-center my-4">
+          <div className="flex items-center justify-center my-3 sm:my-4">
             <span className="h-px w-1/3 bg-gray-300"></span>
             <span className="px-2 text-gray-500">OR</span>
             <span className="h-px w-1/3 bg-gray-300"></span>

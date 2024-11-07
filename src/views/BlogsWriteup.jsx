@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import png1 from '../assets/pexels-vlada-karpovich-4050347.png';
@@ -41,20 +41,24 @@ function BlogsWriteup(props) {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
-    const handleClickArticlesWriteup = () => {
+    /* const handleClickArticlesWriteup = () => {
         navigate('/articles-writeup');
     };
     const handleClickBlogssWriteup = () => {
         navigate('/blogs-writeup');
-    };
+    }; */
     return (
         <div style={{ height: `125vh`, overflowX: '' }}>
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
+            <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
                 <div className="navbar-logo">
                     <img src="../images/ucover.png" alt="Logo" />
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                <div
+                    className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+                    style={{ backgroundColor: 'black', marginRight: '10px' }}
+                    onClick={toggleMenu}
+                >
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -69,22 +73,22 @@ function BlogsWriteup(props) {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
+                    {/* <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
+                    {/*<Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                    
+                    </Link> */}
+
                     <Link to="/counsellors-profile">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
-                        Counsellors Profile
+                        Book Session
                     </Link>
                     <Link to="/aboutus">
                         <FontAwesomeIcon icon={faInfoCircle} className="icon" />

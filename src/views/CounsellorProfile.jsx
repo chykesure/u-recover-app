@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper,  faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import png1 from '../assets/pexels-linkedin-1251832.png';
@@ -8,6 +8,7 @@ import counsellor2 from '../assets/cou2.png';
 import counsellor3 from '../assets/cou3.png';
 import counsellor4 from '../assets/cou4.png';
 import '../components/Footer.css';
+import '../components/booked.css';
 import { FaTwitter, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 function CounsellorProfile() {
@@ -27,12 +28,12 @@ function CounsellorProfile() {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
-    const handleClickArticlesWriteup = () => {
+   /*  const handleClickArticlesWriteup = () => {
         navigate('/articles-writeup');
     };
     const handleClickBlogssWriteup = () => {
         navigate('/blogs-writeup');
-    };
+    }; */
     const handleClickCounsellorProfile = () => {
         navigate('/counsellors-profile');
     };
@@ -40,11 +41,15 @@ function CounsellorProfile() {
     return (
         <div style={{ height: '125vh' }}>
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
+            <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
                 <div className="navbar-logo">
                     <img src="../images/ucover.png" alt="Logo" />
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                <div
+                    className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+                    style={{ backgroundColor: 'black', marginRight: '30px' }}
+                    onClick={toggleMenu}
+                >
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -59,19 +64,19 @@ function CounsellorProfile() {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
+                    {/* <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
+                    {/*<Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                   
+                    </Link> */}
+
                     <Link to="/counsellors-profile" onClick={handleClickCounsellorProfile}>
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
                         Counsellors Profile

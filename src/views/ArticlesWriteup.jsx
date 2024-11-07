@@ -5,7 +5,7 @@ import png3 from '../assets/Deeper-life-logo-final-outlines-.png';
 import billyGrahamImage from '../../src/imgs/rBGEA.png';
 import uRecoverImage from '../../src/imgs/ucover.png';
 import { FiChevronDown } from 'react-icons/fi';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -31,12 +31,12 @@ function ArticlesWriteup() {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
-    const handleClickArticlesWriteup = () => {
+    /* const handleClickArticlesWriteup = () => {
         navigate('/articles-writeup');
     };
     const handleClickBlogssWriteup = () => {
         navigate('/blogs-writeup');
-    };
+    }; */
 
     const articles = [
         { title: 'Article Title 1', author: 'Author 1', image: png1, msg: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales mi nec mauris tincidunt, sit amet viverra augue malesuada.' },
@@ -56,11 +56,15 @@ function ArticlesWriteup() {
 
 
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
+            <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
                 <div className="navbar-logo">
                     <img src="../images/ucover.png" alt="Logo" />
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                <div
+                    className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+                    style={{ backgroundColor: 'black', marginRight: '10px' }}
+                    onClick={toggleMenu}
+                >
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -75,22 +79,22 @@ function ArticlesWriteup() {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
+                    {/* <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
+                    {/*<Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                    
+                    </Link> */}
+
                     <Link to="/counsellors-profile">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
-                        Counsellors Profile
+                        Book Session
                     </Link>
                     <Link to="/aboutus">
                         <FontAwesomeIcon icon={faInfoCircle} className="icon" />

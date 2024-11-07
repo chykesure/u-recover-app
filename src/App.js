@@ -12,6 +12,9 @@ import ArticlesWriteup from './views/ArticlesWriteup';
 import BlogsWriteup from './views/BlogsWriteup';
 import CounsellorProfile from './views/CounsellorProfile';
 import AboutUs from './views/AboutUs';
+import BookSession from './views/BookSession';
+import Testimonies from './views/Testimonies';
+import TestimoniesDetails from './views/TestimoniesDetails';
 
 const App = () => {
   return (
@@ -25,7 +28,10 @@ const App = () => {
       <Route path="/articles-writeup" element={<ArticlesWriteup />} />
       <Route path="/blogs-writeup" element={<BlogsWriteup />} />
       <Route path="/counsellors-profile" element={<CounsellorProfile />} />
+      <Route path="/talk-to-counsellor" element={<BookSession />} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/testimonies" element={<Testimonies />} />
+      <Route path="/testimonies-details" element={<TestimoniesDetails />} />
       {/* Add more routes as needed */}
     </Routes>
 

@@ -4,6 +4,7 @@
     align-items: center;
     padding: 0;
     background: linear-gradient(to bottom, #545353, #007636);
+    background: linear-gradient(to bottom, #545353, #cce2d6);
     min-height: 100vh;
     margin: 0;
     position: relative;

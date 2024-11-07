@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../components/Navbar.css';
 import '../components/Landing.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faComments, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../components/Homepage.css';
@@ -146,11 +146,17 @@ const LandingPage = () => {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
-    const handleClickArticlesWriteup = () => {
+    /* const handleClickArticlesWriteup = () => {
         navigate('/articles-writeup');
     };
     const handleClickBlogssWriteup = () => {
         navigate('/blogs-writeup');
+    }; */
+    const handleBookSession = () => {
+        navigate('/talk-to-counsellor'); // Replace with your target route
+    };
+    const handleTestimonies = () => {
+        navigate('/testimonies'); // Replace with your target route
     };
 
     return (
@@ -159,11 +165,18 @@ const LandingPage = () => {
         <div className="Landing">
 
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
-                <div className="navbar-logo">
-                    <img src="../images/ucover.png" alt="Logo" />
+            <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
+
+                <div className="navbar-logo flex items-center space-x-2 whitespace-nowrap">
+                    <img src="../images/ucover.png" alt="Logo" className="w-8 h-8" />
+                    <span className="text-lg font-semibold text-black">U-Recover</span>
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                <div
+                    className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+                    style={{ backgroundColor: 'black', marginRight: '10px' }}
+                    onClick={toggleMenu}
+                >
+
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -178,26 +191,30 @@ const LandingPage = () => {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
+                    {/* <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
+                    {/*<Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                    
-                    <Link to="/counsellors-profile">
+                    </Link> */}
+
+                    <Link to="/talk-to-counsellor">
                         <FontAwesomeIcon icon={faUserFriends} className="icon" />
-                        Counsellors Profile
+                        Book Session
                     </Link>
                     <Link to="/aboutus">
                         <FontAwesomeIcon icon={faInfoCircle} className="icon" />
                         About Us
+                    </Link>
+                    <Link to="/testimonies" onClick={handleTestimonies}>
+                        <FontAwesomeIcon icon={faComments} className="icon" /> {/* Updated icon */}
+                        Testimonies
                     </Link>
                     <Link to="/login" onClick={handleClick}>
                         <FontAwesomeIcon icon={faSignInAlt} className="icon" />
@@ -282,7 +299,7 @@ const LandingPage = () => {
                     <p>
                         Life can sometimes feel overwhelmingly difficult, and when you're facing such intense emotions, it can be hard to see a way out. But I want you to know that there is hope and there are people who care deeply about you, including our Heavenly Father. Jeremiah 29:11 tells us, "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."
                     </p>
-                    <button className="book-button">Book Session</button>
+                    <button className="book-button" onClick={handleBookSession}>Book Session</button>
                 </div>
                 <div className="image-column">
                     <img src="../images/book_session.png" alt="Booking Session" className="image" />

@@ -1,7 +1,7 @@
 import png1 from '../assets/Thubnail.png';
-import png2 from '../assets/pexels-vlada-karpovich-4050347.png'
+import png2 from '../assets/pexels-vlada-karpovich-4050347.png';
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faComments, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaHeartbeat, FaSoap, FaPrayingHands, FaHeart, FaCross, FaHandsHelping } from 'react-icons/fa';
@@ -55,6 +55,13 @@ const Blogs = () => {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
+    const handleBookSession = () => {
+        navigate('/talk-to-counsellor'); // Replace with your target route
+    };
+
+    const handleTestimonies = () => {
+        navigate('/testimonies'); // Replace with your target route
+    };
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalSlides = blogs.length;
@@ -74,11 +81,16 @@ const Blogs = () => {
     return (
         <div style={{ height: `125vh`, overflowX: '' }}>
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
-                <div className="navbar-logo">
-                    <img src="../images/ucover.png" alt="Logo" />
+            <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
+                <div className="navbar-logo flex items-center space-x-2 whitespace-nowrap">
+                    <img src="../images/ucover.png" alt="Logo" className="w-8 h-8" />
+                    <span className="text-lg font-semibold text-black">U-Recover</span>
                 </div>
-                <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+                <div
+                    className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+                    style={{ backgroundColor: 'black', marginRight: '10px' }}
+                    onClick={toggleMenu}
+                >
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -93,26 +105,30 @@ const Blogs = () => {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup">
+                    {/* <Link to="/articles-writeup">
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup">
+                    {/* <Link to="/blogs-writeup">
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                    
-                    <Link to="/counsellors-profile">
-                        <FontAwesomeIcon icon={faUserFriends} className="icon" />
-                        Counsellors Profile
+                    </Link> */}
+
+                    <Link to="/talk-to-counsellor">
+                        <FontAwesomeIcon icon={faUserFriends} className="icon" onClick={handleBookSession} />
+                        Book Session
                     </Link>
                     <Link to="/aboutus">
                         <FontAwesomeIcon icon={faInfoCircle} className="icon" />
                         About Us
+                    </Link>
+                    <Link to="/testimonies" onClick={handleTestimonies}>
+                        <FontAwesomeIcon icon={faComments} className="icon" /> {/* Updated icon */}
+                        Testimonies
                     </Link>
                     <Link to="/login" onClick={handleClick}>
                         <FontAwesomeIcon icon={faSignInAlt} className="icon" />
@@ -122,8 +138,19 @@ const Blogs = () => {
             </nav>
 
             {/* CARD SECTION */}
-            <section className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
-                style={{ backgroundImage: `url(${png2})`, height: `40vh`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <section
+                className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
+                style={{
+                    backgroundImage: `url(${png2})`,
+                    height: '60vh',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    width: '100vw', // Full viewport width
+                    maxWidth: '100vw', // Ensure no overflow
+                    margin: '0', // Remove any margin
+                }}
+            >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-900 opacity-80"></div>
                 <div className="relative z-10 flex flex-col justify-center items-center text-white h-full">
                     <h2 className="text-5xl font-bold text-white">Blogs</h2>
@@ -208,41 +235,41 @@ const Blogs = () => {
             </section>
 
             <footer className="footer mt-5 mb-4">
-        <div className="footer-content">
-          <div className="footer-section about">
-            <h1 className="logo-text">U-RECOVER</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Sapien sit fermentum risus varius orci nibh.
-              Suspendisse nascetur purus tempus turpis mattis fermentum curabitur cursus aliquet.
-              Maecenas sagittis. Suspendisse nascetur purus tempus turpis mattis fermentum curabitu.
-            </p>
-          </div>
-          <div className="footer-section links">
-            <h2>Useful Links</h2>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/talk-to-counsellor">Talk to a Counsellor</a></li>
-              <li><a href="/resources">Resources</a></li>
-              <li><a href="/testimonies">Testimonies</a></li>
-              <li><a href="/about-us">About Us</a></li>
-            </ul>
-          </div>
-          <div className="footer-section social">
-            <h2>Follow Us</h2>
-            <div className="social-icons">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            </div>
-          </div>
-        </div>
-        <hr className="footer-divider" />
-        <div className="footer-bottom">
-          &copy; U-Recover 2024
-        </div>
-      </footer>
+                <div className="footer-content">
+                    <div className="footer-section about">
+                        <h1 className="logo-text">U-RECOVER</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur. Sapien sit fermentum risus varius orci nibh.
+                            Suspendisse nascetur purus tempus turpis mattis fermentum curabitur cursus aliquet.
+                            Maecenas sagittis. Suspendisse nascetur purus tempus turpis mattis fermentum curabitu.
+                        </p>
+                    </div>
+                    <div className="footer-section links">
+                        <h2>Useful Links</h2>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/talk-to-counsellor">Talk to a Counsellor</a></li>
+                            <li><a href="/resources">Resources</a></li>
+                            <li><a href="/testimonies">Testimonies</a></li>
+                            <li><a href="/about-us">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-section social">
+                        <h2>Follow Us</h2>
+                        <div className="social-icons">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                        </div>
+                    </div>
+                </div>
+                <hr className="footer-divider" />
+                <div className="footer-bottom">
+                    &copy; U-Recover 2024
+                </div>
+            </footer>
 
         </div>
     );

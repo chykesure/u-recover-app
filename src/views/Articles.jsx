@@ -1,7 +1,7 @@
 import png1 from '../assets/pexels-linkedin-1251832.png'
 import React, { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faComments, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -55,6 +55,12 @@ const ArticleList = () => {
   const handleClickBlogs = () => {
     navigate('/blogs');
   };
+  const handleBookSession = () => {
+    navigate('/talk-to-counsellor'); // Replace with your target route
+  };
+  const handleTestimonies = () => {
+    navigate('/testimonies'); // Replace with your target route
+  };
 
   /* CAROUSE */
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,11 +85,18 @@ const ArticleList = () => {
     <div style={{ height: `125vh`, overflowX: '' }}>
 
 
-      <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
-        <div className="navbar-logo">
-          <img src="../images/ucover.png" alt="Logo" />
+      <nav className="navbar w-full fixed top-0 bg-transparent z-20 shadow-md">
+        <div className="navbar-logo flex items-center space-x-2 whitespace-nowrap">
+          <img src="../images/ucover.png" alt="Logo" className="w-8 h-8" />
+          <span className="text-lg font-semibold text-black">U-Recover</span>
         </div>
-        <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
+
+        {/*  */}
+        <div
+          className={`navbar-toggle ${isOpen ? 'open' : ''}`}
+          style={{ backgroundColor: 'black', marginRight: '10px' }}
+          onClick={toggleMenu}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
@@ -98,26 +111,30 @@ const ArticleList = () => {
             <FontAwesomeIcon icon={faNewspaper} className="icon" />
             Articles
           </Link>
-          <Link to="/articles-writeup">
+          {/* <Link to="/articles-writeup">
             <FontAwesomeIcon icon={faPen} className="icon" />
             Articles Write-Up
-          </Link>
+          </Link> */}
           <Link to="/blogs" onClick={handleClickBlogs}>
             <FontAwesomeIcon icon={faBlog} className="icon" />
             Blogs
           </Link>
-          <Link to="/blogs-writeup">
+          {/* <Link to="/blogs-writeup">
             <FontAwesomeIcon icon={faPenFancy} className="icon" />
             Blogs Write-Up
-          </Link>
-          
-          <Link to="/counsellors-profile">
-            <FontAwesomeIcon icon={faUserFriends} className="icon" />
-            Counsellors Profile
+          </Link> */}
+
+          <Link to="/talk-to-counsellor">
+            <FontAwesomeIcon icon={faUserFriends} className="icon" onClick={handleBookSession} />
+            Book Session
           </Link>
           <Link to="/aboutus">
             <FontAwesomeIcon icon={faInfoCircle} className="icon" />
             About Us
+          </Link>
+          <Link to="/testimonies" onClick={handleTestimonies}>
+            <FontAwesomeIcon icon={faComments} className="icon" /> {/* Updated icon */}
+            Testimonies
           </Link>
           <Link to="/login" onClick={handleClick}>
             <FontAwesomeIcon icon={faSignInAlt} className="icon" />
@@ -127,8 +144,19 @@ const ArticleList = () => {
       </nav>
 
       {/* Section with a background image */}
-      <section className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
-        style={{ backgroundImage: `url(${png1})`, height: `60vh`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section
+        className="relative bg-cover bg-center opacity-90 pt-20 mt-80"
+        style={{
+          backgroundImage: `url(${png1})`,
+          height: '60vh',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          width: '100vw', // Full viewport width
+          maxWidth: '100vw', // Ensure no overflow
+          margin: '0', // Remove any margin
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-900 opacity-75"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-white h-full">
           <h2 className="text-5xl font-bold text-white">Articles</h2>

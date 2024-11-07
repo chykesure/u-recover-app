@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faHome, faNewspaper, faPen, faBlog, faPenFancy, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faNewspaper, faComments, faBlog, faUserFriends, faInfoCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import png1 from '../assets/2147626341.png';
@@ -41,21 +41,28 @@ function AboutUs() {
     const handleClickBlogs = () => {
         navigate('/blogs');
     };
-    const handleClickArticlesWriteup = () => {
-        navigate('/articles-writeup');
+    /*  const handleClickArticlesWriteup = () => {
+         navigate('/articles-writeup');
+     };
+     const handleClickBlogssWriteup = () => {
+         navigate('/blogs-writeup');
+     };
+     const handleClickCounsellorProfile = () => {
+         navigate('/counsellors-profile');
+     }; */
+    const handleBookSession = () => {
+        navigate('/talk-to-counsellor'); // Replace with your target route
     };
-    const handleClickBlogssWriteup = () => {
-        navigate('/blogs-writeup');
-    };
-    const handleClickCounsellorProfile = () => {
-        navigate('/counsellors-profile');
+    const handleTestimonies = () => {
+        navigate('/testimonies'); // Replace with your target route
     };
     return (
         <div style={{ height: '125vh' }}>
             {/* HEADER BAR */}
-            <nav className="navbar w-full fixed top-0 left-0 bg-white z-20 shadow-md">
-                <div className="navbar-logo">
-                    <img src="../images/ucover.png" alt="Logo" />
+            <nav className="navbar w-full fixed top-0 right-5 bg-transparent z-20 shadow-md">
+                <div className="navbar-logo flex items-center space-x-2 whitespace-nowrap">
+                    <img src="../images/ucover.png" alt="Logo" className="w-8 h-8" />
+                    <span className="text-lg font-semibold text-black">U-Recover</span>
                 </div>
                 <div className={`navbar-toggle ${isOpen ? 'open' : ''}`} style={{ backgroundColor: `black` }} onClick={toggleMenu}>
                     <span className="bar"></span>
@@ -72,26 +79,30 @@ function AboutUs() {
                         <FontAwesomeIcon icon={faNewspaper} className="icon" />
                         Articles
                     </Link>
-                    <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
+                    {/* <Link to="/articles-writeup" onClick={handleClickArticlesWriteup}>
                         <FontAwesomeIcon icon={faPen} className="icon" />
                         Articles Write-Up
-                    </Link>
+                    </Link> */}
                     <Link to="/blogs" onClick={handleClickBlogs}>
                         <FontAwesomeIcon icon={faBlog} className="icon" />
                         Blogs
                     </Link>
-                    <Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
+                    {/*<Link to="/blogs-writeup" onClick={handleClickBlogssWriteup}>
                         <FontAwesomeIcon icon={faPenFancy} className="icon" />
                         Blogs Write-Up
-                    </Link>
-                   
-                    <Link to="/counsellors-profile" onClick={handleClickCounsellorProfile}>
-                        <FontAwesomeIcon icon={faUserFriends} className="icon" />
-                        Counsellors Profile
+                    </Link> */}
+
+                    <Link to="/talk-to-counsellor">
+                        <FontAwesomeIcon icon={faUserFriends} className="icon" onClick={handleBookSession} />
+                        Book Session
                     </Link>
                     <Link to="/aboutus">
                         <FontAwesomeIcon icon={faInfoCircle} className="icon" />
                         About Us
+                    </Link>
+                    <Link to="/testimonies" onClick={handleTestimonies}>
+                        <FontAwesomeIcon icon={faComments} className="icon" /> {/* Updated icon */}
+                        Testimonies
                     </Link>
                     <Link to="/login" onClick={handleClick}>
                         <FontAwesomeIcon icon={faSignInAlt} className="icon" />
